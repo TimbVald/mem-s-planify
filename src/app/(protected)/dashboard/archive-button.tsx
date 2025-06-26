@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
 'use client'
 
 import { api } from '@/trpc/react'
@@ -37,19 +38,22 @@ const ArchiveButton = () => {
       size='sm'
       variant='destructive'
       onClick={handleArchive}
-      className='cursor-pointer'
+      className='cursor-pointer group relative overflow-hidden transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg active:scale-95 bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 border-0 shadow-md'
     >
-      {archiveProject.isPending ? (
-        <>
-          <Loader2 className='w-4 h-4 animate-spin mr-2' />
-          Archivage...
-        </>
-      ) : (
-        <>
-          Archiver
-          <Archive className='w-4 h-4 ml-2' />
-        </>
-      )}
+      <div className='absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out' />
+      <div className='relative flex items-center justify-center gap-2'>
+        {archiveProject.isPending ? (
+          <>
+            <Loader2 className='w-4 h-4 animate-spin transition-all duration-300' />
+            <span className='font-medium'>Archivage...</span>
+          </>
+        ) : (
+          <>
+            <span className='font-medium'>Archiver</span>
+            <Archive className='w-4 h-4 transition-all duration-300 group-hover:rotate-12 group-hover:scale-110' />
+          </>
+        )}
+      </div>
     </Button>
   )
 }

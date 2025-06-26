@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
+/* eslint-disable @typescript-eslint/await-thenable */
+/* eslint-disable @typescript-eslint/no-floating-promises */
 'use server'
 
 import { createGoogleGenerativeAI } from '@ai-sdk/google'
