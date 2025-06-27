@@ -18,12 +18,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-      <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-        <Toaster richColors/>
-      </body>
-    </html>
+      <html lang="en" suppressHydrationWarning>
+        <body>
+            <TRPCReactProvider>{children}</TRPCReactProvider>
+            <Toaster richColors />
+        </body>
+      </html>
     </ClerkProvider>
   );
 }

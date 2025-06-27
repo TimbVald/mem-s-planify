@@ -36,6 +36,8 @@ const SidebarLayout = ({children}: Props) => {
                             className="px-3 py-1.5 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm bg-white shadow-sm"
                         />
                     </div>
+
+
                     
                     <div className="flex items-center gap-4">
                         <div className="flex items-center gap-2 text-sm text-gray-600">
