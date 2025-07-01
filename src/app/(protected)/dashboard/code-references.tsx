@@ -4,7 +4,13 @@
 import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Tabs, TabsContent, TabsTrigger, TabsList } from '@/components/ui/tabs'
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import dynamic from 'next/dynamic'
+
+const SyntaxHighlighter = dynamic(() =>
+    import('react-syntax-highlighter').then(mod => mod.Prism as any),
+    { ssr: false }
+) as any
+
 import { lucario } from 'react-syntax-highlighter/dist/esm/styles/prism'
 // import {} from 'react-syntax-highlighter/dist/cjs/languages/prism/unrealscript'
 import { cn } from '@/lib/utils'

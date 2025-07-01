@@ -6,11 +6,14 @@ import { api } from '@/trpc/react'
 import useProject from '@/hooks/use-project'
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import AskQuestionCard from '../dashboard/ask-question-card'
-import MDEditor from '@uiw/react-md-editor'
+import dynamic from 'next/dynamic'
 import CodeReferences from '../dashboard/code-references'
 import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Calendar, MessageCircle, User } from 'lucide-react'
+
+// Lazy load markdown editor for client only
+const MDEditor: any = dynamic(() => import('@uiw/react-md-editor').then(mod => mod.default), { ssr: false })
 
 const QAPage = () => {
   const {projectId} = useProject()

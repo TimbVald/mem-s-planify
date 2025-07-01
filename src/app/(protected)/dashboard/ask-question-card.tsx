@@ -3,7 +3,7 @@
 /* eslint-disable react-hooks/rules-of-hooks */
 'use client'
 
-import MDEditor  from '@uiw/react-md-editor'
+import dynamic from 'next/dynamic'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
@@ -19,6 +19,9 @@ import { api } from '@/trpc/react'
 import { toast } from 'sonner'
 import useRefetch from '@/hooks/use-refetch'
 import { Save, X, Send, Sparkles, MessageCircle, Loader2 } from 'lucide-react'
+
+// Dynamically load the heavy markdown editor on the client only
+const MDEditor: any = dynamic(() => import('@uiw/react-md-editor').then(mod => mod.default), { ssr: false })
 
 const AskQuestionCard = () => {
     const { project } = useProject()

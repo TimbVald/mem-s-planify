@@ -12,6 +12,14 @@ const config = {
     typescript: {
         ignoreBuildErrors: true,
     },
+    modularizeImports: {
+        'lucide-react': {
+            transform: 'lucide-react/dist/esm/icons/{{member}}',
+        },
+    },
+    images: {
+        formats: ['image/avif', 'image/webp'],
+    },
 };
 
 export default config;
