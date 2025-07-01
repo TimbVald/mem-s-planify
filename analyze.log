@@ -1,0 +1,13 @@
+   ▲ Next.js 15.3.3
+   - Experiments (use with caution):
+     ✓ optimizeCss
+
+   Creating an optimized production build ...
+Webpack Bundle Analyzer saved report to /workspace/.next/analyze/nodejs.html
+Webpack Bundle Analyzer saved report to /workspace/.next/analyze/edge.html
+Webpack Bundle Analyzer saved report to /workspace/.next/analyze/client.html
+ ✓ Compiled successfully in 16.0s
+   Skipping validation of types
+   Skipping linting
+   Collecting page data ...
+   Generating static pages (0/9) ...
