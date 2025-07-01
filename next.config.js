@@ -4,8 +4,14 @@
  */
 import "./src/env.js";
 
+import createBundleAnalyzer from '@next/bundle-analyzer';
+
+const withBundleAnalyzer = createBundleAnalyzer({
+    enabled: process.env.ANALYZE === 'true',
+});
+
 /** @type {import("next").NextConfig} */
-const config = {
+const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
@@ -22,4 +28,4 @@ const config = {
     },
 };
 
-export default config;
+export default withBundleAnalyzer(nextConfig);
