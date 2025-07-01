@@ -26,6 +26,26 @@ const nextConfig = {
     images: {
         formats: ['image/avif', 'image/webp'],
     },
+    experimental: {
+        optimizeCss: true,
+    },
+    headers() {
+        return Promise.resolve([
+            {
+                source: '/fonts/(.*)\\.woff2',
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=31536000, immutable',
+                    },
+                    {
+                        key: 'Access-Control-Allow-Origin',
+                        value: '*',
+                    },
+                ],
+            },
+        ]);
+    },
 };
 
 export default withBundleAnalyzer(nextConfig);

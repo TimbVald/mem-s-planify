@@ -1,11 +1,14 @@
 import "@/styles/globals.css";
 
 import { type Metadata } from "next";
+import { Inter } from "next/font/google";
 // import { Geist } from "next/font/google";
 
 import {ClerkProvider} from '@clerk/nextjs'
 import { TRPCReactProvider } from "@/trpc/react";
 import { Toaster } from "sonner";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: "Mem's PlaniFy | SaaS GitHub AI",
@@ -19,7 +22,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-        <body>
+        <body className={inter.className}>
             <TRPCReactProvider>{children}</TRPCReactProvider>
             <Toaster richColors />
         </body>
